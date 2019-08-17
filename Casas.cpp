@@ -1,6 +1,7 @@
 #include "Casas.h"
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -8,14 +9,38 @@ Casas::Casas()
 {
 }
 
-double Casas::getAreaConstruida()
+void Casas::cadastraCasa()
 {
-    return areaConstruida;
+    int pav, q;
+    double areat, areac;
+
+    cout << "\nNumero de pavimentos: ";
+    cin >> pav;
+    cout << "\nQuartos: ";
+    cin >> q;
+    cout << "\nArea construida: ";
+    cin >> areac;
+    cout << "\nArea do terreno: ";
+    cin >> areat;
+
+    setCasa(tipo, val, r, num, b, ci, ce, pav, q, areac, areat);
 }
 
-double Casas::getAreaTerreno()
+void Casas::setCasa(int pav, int q, double areac, double areat)
 {
-    return areaTerreno;
+    pavimentos = pav;
+    quartos = q;
+    areaConstruida = areac;
+    areaTerreno = areat;
+}
+
+string Casas::toStringCasas()
+{
+    stringstream cas;
+
+    cas << pavimentos << quartos << areaConstruida << areaTerreno << endl;
+
+    return cas.str();
 }
 
 int Casas::getPavimentos()
@@ -28,35 +53,12 @@ int Casas::getQuartos()
     return quartos;
 }
 
-void Casas::setAreaConstruida()
+double Casas::getAreaC()
 {
-    double areacons;
-    cout << "Area construida: ";
-    cin >> areacons;
-    areaConstruida = areacons;
+    return areaConstruida;
 }
 
-void Casas::setAreaTerreno()
+double Casas::getAreaT()
 {
-    double areater;
-    cout << "Area do terreno: ";
-    cin >> areater;
-    areaTerreno = areater;
+    return areaTerreno;
 }
-
-void Casas::setPavimentos()
-{
-    int pav;
-    cout << "Numero de pavimentos: ";
-    cin >> pav;
-    pavimentos = pav;    
-}
-
-void Casas::setQuartos()
-{
-    int quar;
-    cout << "Numero de quartos: ";
-    cin >> quar;
-    quartos = quar;
-}
-

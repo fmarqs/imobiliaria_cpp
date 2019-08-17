@@ -6,13 +6,14 @@
 class Terreno: public Imoveis
 {
     private:
-        double area;
+        double area, preco;
 
     public:
         Terreno();
+        void cadastraTerreno();
+        void setTerreno(double ar, double pre);
         double getArea();
-
-        void setArea();
+        double getPreco();
 
 };
 

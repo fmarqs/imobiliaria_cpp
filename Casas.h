@@ -11,15 +11,14 @@ class Casas: public Imoveis
 
     public:
         Casas();
+        std::string toStringCasas();
+        void cadastraCasa();
+        void setCasa(int pav, int q, double areac, double areat);
         int getPavimentos();
         int getQuartos();
-        double getAreaTerreno();
-        double getAreaConstruida();
+        double getAreaT();
+        double getAreaC();
 
-        void setPavimentos();
-        void setQuartos();
-        void setAreaTerreno();
-        void setAreaConstruida();
 
 };
 

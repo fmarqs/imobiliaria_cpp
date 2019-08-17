@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-class Imoveis
+class Imoveis: public Endereco
 {
     protected:
         double valor;
@@ -16,7 +16,7 @@ class Imoveis
         Imoveis();
         double getValor();
         bool getTipo();
-        Endereco getEndereco();
+        std::string getEndereco();
 
         void setValor();
         void setTipo();

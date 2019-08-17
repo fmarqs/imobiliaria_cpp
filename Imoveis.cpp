@@ -46,10 +46,10 @@ void Imoveis::setValor()
 
 }
 
-
-Endereco Imoveis::getEndereco()
+string Imoveis::getEndereco()
 {
-    return endereco;
+    string end1 = endereco.toString();
+    return end1;
 }
 
 void Imoveis::setEndereco()

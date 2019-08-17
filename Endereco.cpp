@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -25,6 +26,7 @@ void Endereco::cadastraEndereco()
     getline(cin, ci);
     cout << "Numero do imovel: ";
     cin >> n;
+    cin.ignore();
     cout << "CEP: ";
     getline(cin, ce);
 
@@ -33,11 +35,45 @@ void Endereco::cadastraEndereco()
 }
 
 
-void Endereco::setarEndereco(string r, int n, string b, string ce, string ci)
+void Endereco::setarEndereco(string r, int n, string b, string ci, string ce)
 {
     rua = r;
     numero = n;
     bairro = b;
     cidade = ci;
     cep = ce;
+}
+
+string Endereco::toString()
+{
+    stringstream end;
+
+    end << rua << endl << bairro << endl << cidade << endl << cep << endl << numero << endl;
+
+    return end.str(); 
+}
+
+string Endereco::getRua()
+{
+    return rua;
+}
+
+string Endereco::getBairro()
+{
+    return bairro;
+}
+
+string Endereco::getCep()
+{
+    return cep;
+}
+
+string Endereco::getCidade()
+{
+    return cidade;
+}
+
+int Endereco::getNumero()
+{
+    return numero;
 }

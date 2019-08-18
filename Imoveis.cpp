@@ -6,7 +6,7 @@ using namespace std;
 
 Imoveis::Imoveis()
 {
-   
+
 }
 
 double Imoveis::getValor()
@@ -14,14 +14,14 @@ double Imoveis::getValor()
     return valor;
 }
 
-bool Imoveis::getTipo()
+int Imoveis::getTipo()
 {
     return tipoOferta;
 }
 
 void Imoveis::setTipo()
 {
-    bool type;
+    int type;
     cout << "Tipo da oferta (0 ALUGUEL - 1 VENDA): ";
     cin >> type;
     tipoOferta = type;
@@ -46,11 +46,6 @@ void Imoveis::setValor()
 
 }
 
-string Imoveis::getEndereco()
-{
-    string end1 = endereco.toString();
-    return end1;
-}
 
 void Imoveis::setEndereco()
 {

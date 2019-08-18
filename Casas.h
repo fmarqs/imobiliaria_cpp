@@ -18,6 +18,8 @@ class Casas: public Imoveis
         int getQuartos();
         double getAreaT();
         double getAreaC();
+        void lerCasas(int tipo, double val, std::string r, int num, std::string b, std::string ci,
+        std::string ce, int pav, int q, double areac, double areat);
 
 
 };

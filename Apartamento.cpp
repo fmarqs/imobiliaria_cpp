@@ -7,7 +7,7 @@ using namespace std;
 
 Apartamento::Apartamento()
 {
-    
+
 }
 
 void Apartamento::cadastraApt()
@@ -16,25 +16,20 @@ void Apartamento::cadastraApt()
     int qua, an, gar;
     string pos;
 
-    cout << "\nArea: ";
+    cout << "Area: ";
     cin >> ar;
-    area = ar;
-    cout << "\nValor do condominio: ";
+    cout << "Valor do condominio: ";
     cin >> cond;
-    condominio = cond;
-    cout << "\nQuartos: ";
+    cout << "Quartos: ";
     cin >> qua;
-    quartos = qua;
-    cout << "\nAndar: ";
+    cout << "Andar: ";
     cin >> an;
-    andar = an;
-    cout << "\nGaragem: ";
+    cout << "Garagem: ";
     cin >> gar;
-    garagem = gar;
     cin.ignore();
-    cout << "\nPosicao: "; 
+    cout << "Posicao: ";
     getline(cin, pos);
-    
+
 
     setApartamento(ar, cond, qua, an, gar, pos);
 
@@ -89,4 +84,23 @@ int Apartamento::getQuartos()
 string Apartamento::getPosicao()
 {
     return posicao;
+}
+
+void Apartamento::lerApt(int tipo, double val, std::string r, int num, std::string b, std::string ci,
+        std::string ce, double ar, double cond, int qua, int an, int gar, std::string pos)
+{
+    tipoOferta = tipo;
+    valor = val;
+    rua = r;
+    numero = num;
+    bairro = b;
+    cidade = ci;
+    cep = ce;
+    area = ar;
+    condominio = cond;
+    quartos = qua;
+    andar = an;
+    garagem = gar;
+    posicao = pos;
+
 }

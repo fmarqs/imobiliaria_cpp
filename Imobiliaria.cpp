@@ -88,7 +88,7 @@ void Imobiliaria::cadastroTerreno(Terreno obj)
 
 void Imobiliaria::printCasas()
 {
-
+    lerNumero();
     for(int i=0; i<n_casas; i++)
     {
         cout << "Tipo: " << casas[i].getTipo() << endl;
@@ -98,57 +98,37 @@ void Imobiliaria::printCasas()
         }else
         cout << "Valor: " << casas[i].getValor() << endl;
         cout << "Titulo: " << casas[i].getTitulo() << endl;
-        cout << "Rua: " << casas[i].getRua() << endl;
-        cout << "Numero: " << casas[i].getNumero() << endl;
         cout << "Bairro: " << casas[i].getBairro() << endl;
         cout << "Cidade: " << casas[i].getCidade() << endl;
-        cout << "CEP: " << casas[i].getCep() << endl;
-        cout << "Pavimentos: " << casas[i].getPavimentos() << endl;
-        cout << "Quartos: " << casas[i].getQuartos() << endl;
-        cout << "Area construida: " << casas[i].getAreaC() << endl;
-        cout << "Area do terreno: " << casas[i].getAreaT() << "\n" << endl;
-
     }
 }
 
 void Imobiliaria::printApartamento()
 {
-
+    lerNumero();
     for(int i=0; i<n_apt; i++)
     {
-        cout << "Tipo: " << apt[i].getTipo() << endl;
+
         if(apt[i].getTipo() == 0)
         {
             cout << "Aluguel: " << apt[i].getValor() << endl;
         }else
         cout << "Valor: " << apt[i].getValor() << endl;
         cout << "Titulo: " << apt[i].getTitulo() << endl;
-        cout << "Rua: " << apt[i].getRua() << endl;
-        cout << "Numero: " << apt[i].getNumero() << endl;
         cout << "Bairro: " << apt[i].getBairro() << endl;
         cout << "Cidade: " << apt[i].getCidade() << endl;
-        cout << "CEP: " << apt[i].getCep() << endl;
-        cout << "Area: " << apt[i].getArea() << endl;
-        cout << "Condominio: " << apt[i].getCondominio() << endl;
-        cout << "Quartos: " << apt[i].getQuartos() << endl;
-        cout << "Andar: " << apt[i].getAndar() << endl;
-        cout << "Garagem: " << apt[i].getGaragem() << endl;
-        cout << "Posicao: " << apt[i].getPosicao() << "\n" << endl;
-    }
+}
 }
 
 void Imobiliaria::printTerreno()
 {
+    lerNumero();
     for(int i=0; i<n_ter; i++)
     {
         cout << "Valor: " << ter[i].getValor() << endl;
         cout << "Titulo: " << ter[i].getTitulo() << endl;
-        cout << "Rua: " << ter[i].getRua() << endl;
-        cout << "Numero: " << ter[i].getNumero() << endl;
         cout << "Bairro: " << ter[i].getBairro() << endl;
         cout << "Cidade: " << ter[i].getCidade() << endl;
-        cout << "CEP: " << ter[i].getCep() << endl;
-        cout << "Area: " << ter[i].getArea() << "\n" << endl;
     }
 
 }
@@ -167,7 +147,6 @@ int Imobiliaria::lerNumero()
     imov >> n_casas;
     imov >> n_apt;
     imov >> n_ter;
-    imov.close();
 }
 
 int Imobiliaria::lerLista()
@@ -256,7 +235,7 @@ int Imobiliaria::salvarDados()
 
     ofstream lista, imov;
     imov.open("numeroImov.txt", ios::trunc);
-    lista.open("ListaImoveis.txt", ios::app);
+    lista.open("ListaImoveis.txt", ios::trunc);
 
     if(!lista.is_open() || !imov.is_open())
     {
@@ -269,6 +248,7 @@ int Imobiliaria::salvarDados()
     imov << n_casas << endl;
     imov << n_apt << endl;
     imov << n_ter << endl;
+    imov.close();
 
     for(int i=0; i<casas.size(); i++)
     {
@@ -326,27 +306,52 @@ int Imobiliaria::salvarDados()
 
 void Imobiliaria::listaTodos()
 {
-    for(int i=0; i<n_casas; i++)
-    {
-        cout << "Titulo: " << casas[i].getTitulo() << endl;
-        cout << "Bairro: " << casas[i].getBairro() << endl;
-        cout << "Cidade: " << casas[i].getCidade() << endl;
-        cout << "Valor: " <<  casas[i].getValor() << endl;
-    }
+    lerNumero();
+    int opt;
+    cout << "IMÓVEIS DISPONÍVEIS" << endl;
+    cout << "Escolha um tipo de imóvel" << endl;
+    cout << "1 - CASAS\n 2 - APARTAMENTO\n 3 - TERRENO" << endl;
+    cin >> opt;
 
-    for(int i=0; i<n_apt; i++)
-    {
-        cout << "Titulo: " << apt[i].getTitulo() << endl;
-        cout << "Bairro: " << apt[i].getBairro() << endl;
-        cout << "Cidade: " << apt[i].getCidade() << endl;
-        cout << "Valor: "  << apt[i].getValor() << endl;
-    }
-
-    for(int i=0; i<n_ter; i++)
-    {
-        cout << "Titulo: " << ter[i].getTitulo() << endl;
-        cout << "Bairro: " << ter[i].getBairro() << endl;
-        cout << "Cidade: " << ter[i].getCidade() << endl;
-        cout << "Valor: " << ter[i].getValor() << endl;
-    }
-}
+    if(opt == 1){
+        for(int i=0;i<n_casas;i++){
+            cout << "Título: " << casas[i].getTitulo() << endl;
+            cout << "Valor: " << casas[i].getValor() << endl;
+            cout << "Rua: " << casas[i].getRua() << endl;
+            cout << "Numero: " << casas[i].getNumero() << endl;
+            cout << "Bairro: " << casas[i].getBairro() << endl;
+            cout << "Cidade: " << casas[i].getCidade() << endl;
+            cout << "CEP: " << casas[i].getCep() << endl;
+            cout << "Pavimentos: " << casas[i].getPavimentos() << endl;
+            cout << "Quartos: " << casas[i].getQuartos() << endl;
+            cout << "Area construida: " << casas[i].getAreaC() << endl;
+            cout << "Area do terreno: " << casas[i].getAreaT() << endl;
+        }
+    }else if(opt == 2){
+        for(int i=0;i<n_apt;i++){
+            cout << "Título: " << apt[i].getTitulo() << endl;
+            cout << "Valor: " << apt[i].getValor() << endl;
+            cout << "Rua: " << apt[i].getRua() << endl;
+            cout << "Numero: " << apt[i].getNumero() << endl;
+            cout << "Bairro: " << apt[i].getBairro() << endl;
+            cout << "Cidade: " << apt[i].getCidade() << endl;
+            cout << "CEP: " << apt[i].getCep() << endl;
+            cout << "Area: " << apt[i].getArea() << endl;
+            cout << "Andar: " << apt[i].getAndar() << endl;
+            cout << "Valor do condominio: " << apt[i].getCondominio() << endl;
+            cout << "Quartos: " << apt[i].getQuartos() << endl;
+            cout << "Vagas na garagem: " << apt[i].getGaragem() << endl;
+            cout << "Posicao: " << apt[i].getPosicao() << endl;
+          }
+    }else if(opt == 3){
+        for(int i=0;i<n_ter;i++){
+            cout << "Título: " << ter[i].getTitulo() << endl;
+            cout << "Valor: " << ter[i].getValor() << endl;
+            cout << "Rua: " << ter[i].getRua() << endl;
+            cout << "Numero: " << ter[i].getNumero() << endl;
+            cout << "Bairro: " << ter[i].getBairro() << endl;
+            cout << "Cidade: " << ter[i].getCidade() << endl;
+            cout << "CEP: " << ter[i].getCep() << endl;
+            cout << "Area: " << ter[i].getArea() << endl;
+        }
+}}

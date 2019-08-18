@@ -13,17 +13,16 @@ void Casas::cadastraCasa()
 {
     int pav, q;
     double areat, areac;
-
-    cout << "\nNumero de pavimentos: ";
+    cout << "Numero de pavimentos: ";
     cin >> pav;
-    cout << "\nQuartos: ";
+    cout << "Quartos: ";
     cin >> q;
-    cout << "\nArea construida: ";
+    cout << "Area construida: ";
     cin >> areac;
-    cout << "\nArea do terreno: ";
+    cout << "Area do terreno: ";
     cin >> areat;
 
-    setCasa(tipo, val, r, num, b, ci, ce, pav, q, areac, areat);
+    setCasa(pav, q, areac, areat);
 }
 
 void Casas::setCasa(int pav, int q, double areac, double areat)
@@ -61,4 +60,20 @@ double Casas::getAreaC()
 double Casas::getAreaT()
 {
     return areaTerreno;
+}
+
+void Casas::lerCasas(int tipo, double val, string r, int num, string b, string ci, string ce, int pav, int q, double areac, double areat)
+{
+    tipoOferta = tipo;
+    valor = val;
+    rua = r;
+    numero = num;
+    bairro = b;
+    cidade = ci;
+    cep = ce;
+    pavimentos = pav;
+    q = quartos;
+    areaConstruida = areac;
+    areaTerreno = areat;
+
 }

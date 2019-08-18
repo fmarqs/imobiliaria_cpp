@@ -12,7 +12,6 @@ class Apartamento: public Imoveis
 
     public:
         Apartamento();
-        std::string getPosicao();
         std::string toStringApt();
         void cadastraApt();
         void setApartamento(double ar, double cond, int qua, int an, int gar, std::string pos);
@@ -23,6 +22,8 @@ class Apartamento: public Imoveis
         int getAndar();
         int getGaragem();
         std::string getPosicao();
+        void lerApt(int tipo, double val, std::string r, int num, std::string b, std::string ci,
+        std::string ce, double ar, double cond, int qua, int an, int gar, std::string pos);
 };
 
 #endif

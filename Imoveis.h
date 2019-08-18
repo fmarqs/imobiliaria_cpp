@@ -10,13 +10,12 @@ class Imoveis: public Endereco
     protected:
         double valor;
         Endereco endereco;
-        bool tipoOferta;
-    
+        int tipoOferta;
+
     public:
         Imoveis();
         double getValor();
-        bool getTipo();
-        std::string getEndereco();
+        int getTipo();
 
         void setValor();
         void setTipo();

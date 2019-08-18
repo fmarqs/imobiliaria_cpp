@@ -14,7 +14,6 @@ class Endereco
         Endereco();
         void cadastraEndereco();
         void setarEndereco(std::string r, int n, std::string b, std::string ci, std::string ce);
-        std::string toString();
         void print();
         std::string getRua();
         std::string getBairro();

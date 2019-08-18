@@ -18,9 +18,9 @@ using namespace std;
 
 void menuCadastrarCasa()
 {
-    Imobiliaria i = Imobiliaria(); 
+    Imobiliaria i = Imobiliaria();
     Casas c = Casas();
-    
+
     i.cadastroCasa(c);
     i.salvarDados();
 
@@ -87,7 +87,7 @@ void menuCadastro()
         else if(op == 4)
             menuPrincipal();
 
-    
+
 }
 
 void menuBuscar()
@@ -98,18 +98,28 @@ void menuBuscar()
     cout << "2 - BUSCAR POR TIPO " << endl;
     cout << "3 - BUSCAR POR CATEGORIA " << endl;
     cin >> op;
-    cin.ignore(); 
+    cin.ignore();
     if(op == 1)
     {
-        Imobiliaria i;
-        i.listaTodos();
+        Imobiliaria i = Imobiliaria();
+        i.printCasas();
+        i.printApartamento();
+        i.printTerreno();
+    }
+    else if(op == 2)
+    {
+      Imobiliaria a = Imobiliaria();
+      a.listaTodos();
     }
 
 }
 
 int main()
 {
-    
+    Imobiliaria *i = new Imobiliaria();
+    i->lerLista();
     menuPrincipal();
-    
+
+    delete i;
+
 }

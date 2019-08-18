@@ -36,3 +36,15 @@ double Terreno::getPreco()
 {
     return preco;
 }
+
+void Terreno::lerTerreno(double val, std::string r, int num, std::string b, std::string ci,
+        std::string ce, double ar)
+{
+    preco = val;
+    rua = r;
+    numero = num;
+    bairro = b;
+    cidade = ci;
+    cep = ce;
+    area = ar;
+}

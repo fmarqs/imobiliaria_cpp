@@ -15,9 +15,7 @@ void Endereco::cadastraEndereco()
 {
     string r, b, ci, ce;
     int n;
-
-    cout << "MENU CADASTRAR" << endl;
-
+    cin.ignore();
     cout << "Rua: ";
     getline(cin, r);
     cout << "Bairro: ";
@@ -44,14 +42,6 @@ void Endereco::setarEndereco(string r, int n, string b, string ci, string ce)
     cep = ce;
 }
 
-string Endereco::toString()
-{
-    stringstream end;
-
-    end << rua << endl << bairro << endl << cidade << endl << cep << endl << numero << endl;
-
-    return end.str(); 
-}
 
 string Endereco::getRua()
 {

@@ -1,0 +1,94 @@
+1
+casa na praia
+ALUGUEL
+5000
+RUAPR
+BAIRROPR
+CIDADEPR
+CEPRP
+NUMPR
+50
+50
+50
+50
+1
+perto da epitacio
+VENDA
+120000
+av goias
+b dos estados
+joao pessoa
+58030060
+190
+2
+2
+100
+120
+1
+perto do shopping mangabeira
+VENDA
+500000
+joao vieira carneiro
+mangabeira
+joao pessoa
+580305405
+190
+3
+3
+100
+120
+2
+perto da ufpb
+ALUGUEL
+600
+epitacio pessoa
+centro
+joao epssoa
+409432
+9302
+2
+1
+0
+leste
+350
+75
+2
+perto da epitacio
+VENDA
+250000
+av goias
+b dos estados
+joao pessoa
+58030060
+286
+2
+2
+1
+nascente sul
+500000
+100
+2
+predio com piscina
+ALUGUEL
+100000
+epitacio pessoa
+centro
+joao pessoa
+69405943
+123
+6
+2
+2
+nascente leste
+100
+90
+3
+terreno baldio
+VENDA
+12000
+joao vieira carneiro
+bessa
+joao pessoa
+4932843
+123
+200
